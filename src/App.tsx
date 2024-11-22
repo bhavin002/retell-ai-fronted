@@ -60,8 +60,7 @@ const App = () => {
 
   async function registerCall(agent_id: string): Promise<RegisterCallResponse> {
     try {
-      const response = await fetch(
-        "http://127.0.0.1:8080/register_call",
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/register_call`,
         {
           method: "POST",
           headers: {
